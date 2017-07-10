@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.kangxin.myproject.activity.Android6Activity;
 import com.example.kangxin.myproject.activity.ButterKnifeActivity;
 import com.example.kangxin.myproject.activity.MoneyInputActivity;
 import com.example.kangxin.myproject.activity.MyShowLightDialog;
@@ -27,6 +28,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    public void click7(View veiw){
+        startActivity(new Intent(MainActivity.this, Android6Activity.class));
     }
     public void click6(View veiw){
         startActivity(new Intent(MainActivity.this, ButterKnifeActivity.class));
