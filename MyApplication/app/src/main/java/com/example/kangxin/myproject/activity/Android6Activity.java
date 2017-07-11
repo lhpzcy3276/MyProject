@@ -16,6 +16,7 @@ import io.reactivex.functions.Consumer;
 
 /**
  * Android6.0权限
+ * http://www.cnblogs.com/whoislcj/p/6090795.html
  */
 public class Android6Activity extends AppCompatActivity {
 

@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="my_dimen_20">20dp</dimen>
     <dimen name="my_dimen_2">2dp</dimen>
+    <dimen name="my_dimen_40">40dp</dimen>
 </resources>
