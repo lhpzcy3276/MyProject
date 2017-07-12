@@ -168,7 +168,7 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(User response, int id)
                     {
-                        mTv.setText("onResponse:" + response.username);
+                        mTv.setText("onResponse:" + response.getName());
                     }
                 });
     }

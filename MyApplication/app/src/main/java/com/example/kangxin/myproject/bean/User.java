@@ -1,25 +1,44 @@
 package com.example.kangxin.myproject.bean;
 
-public class User {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.RealmClass;
 
-	public String username ;
-	public String password  ;
-	
+public class User extends RealmObject {
 	public User() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public User(String username, String password) {
-		this.username = username;
-		this.password = password;
 	}
 
-	@Override
-	public String toString()
-	{
-		return "User{" +
-				"username='" + username + '\'' +
-				", password='" + password + '\'' +
-				'}';
+	public User(String name, String email) {
+		this.name = name;
+		this.email = email;
+	}
+
+	private String name ;
+	private String email  ;
+	@PrimaryKey
+	private String id;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }

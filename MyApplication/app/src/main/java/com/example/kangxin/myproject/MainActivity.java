@@ -11,17 +11,11 @@ import com.example.kangxin.myproject.activity.ButterKnifeActivity;
 import com.example.kangxin.myproject.activity.MoneyInputActivity;
 import com.example.kangxin.myproject.activity.MyShowLightDialog;
 import com.example.kangxin.myproject.activity.OkhttpUtilsActivity;
+import com.example.kangxin.myproject.activity.RealmActivity;
 import com.example.kangxin.myproject.activity.RetrofitActivity;
 import com.example.kangxin.myproject.activity.RxJavaActivity;
+import com.example.kangxin.myproject.activity.Rxjava2Activity;
 
-import java.io.File;
-
-import butterknife.ButterKnife;
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Function;
-import okhttp3.OkHttpClient;
 
 public class MainActivity extends Activity {
 
@@ -29,6 +23,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    public void click10(View veiw){
+        startActivity(new Intent(MainActivity.this, RealmActivity.class));
+    }
+    public void click9(View veiw){
+        startActivity(new Intent(MainActivity.this, Rxjava2Activity.class));
     }
     public void click8(View veiw){
         startActivity(new Intent(MainActivity.this, Android7Activity.class));
