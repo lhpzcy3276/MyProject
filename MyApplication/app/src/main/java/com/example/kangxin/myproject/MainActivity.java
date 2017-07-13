@@ -15,6 +15,7 @@ import com.example.kangxin.myproject.activity.RealmActivity;
 import com.example.kangxin.myproject.activity.RetrofitActivity;
 import com.example.kangxin.myproject.activity.RxJavaActivity;
 import com.example.kangxin.myproject.activity.Rxjava2Activity;
+import com.example.kangxin.myproject.activity.ThreadPoolActivity;
 
 
 public class MainActivity extends Activity {
@@ -23,6 +24,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    public void click11(View veiw){
+        startActivity(new Intent(MainActivity.this, ThreadPoolActivity.class));
     }
     public void click10(View veiw){
         startActivity(new Intent(MainActivity.this, RealmActivity.class));

@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.example.kangxin.myproject.R;
 import com.example.kangxin.myproject.utils.ActivityUtils;
 import com.example.kangxin.myproject.utils.GetToast;
+import com.growingio.android.sdk.collection.GrowingIO;
 
 import java.util.Random;
 
@@ -67,6 +68,10 @@ public class MyShowLightDialog extends Activity implements View.OnClickListener 
         messageTv= (TextView) findViewById(R.id.message);
         sSeekBar= (SeekBar) findViewById(R.id.seek_bar);
         ll_contentView= (LinearLayout) findViewById(R.id.ll_contentView);
+        GrowingIO growingIO = GrowingIO.getInstance();
+        growingIO.setPageGroup(this, "activity_dialog");
+        growingIO.setPS1(this, "1234567");
+        growingIO.setPS2(this, "运动T-shirt");
     }
 
     private void regisitListener() {

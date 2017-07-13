@@ -33,16 +33,16 @@ public class RealmActivity extends Activity {
         realm = Realm.getDefaultInstance();
 
     }
-    @OnClick({R.id.activity_realm_textview1,R.id.activity_realm_textview2,R.id.activity_realm_textview3,R.id.activity_realm_textview4,R.id.activity_realm_textview5,R.id.activity_realm_textview6,R.id.activity_realm_textview7,R.id.activity_realm_textview8})
+    @OnClick({R.id.activity_realm_textview1,R.id.activity_realm_textview2,R.id.activity_realm_textview3,R.id.activity_realm_textview4,R.id.activity_realm_textview5,R.id.activity_realm_textview6,R.id.activity_realm_textview7,R.id.activity_realm_textview8,
+    R.id.realm_relativelayout})
     void myClick(View view){
 
         switch (view.getId()){
             case R.id.activity_realm_textview1:
                 realm.beginTransaction();
-                User user = realm.createObject(User.class);
+                User user = realm.createObject(User.class,"001");
                 user.setName("lhp");
                 user.setEmail("17778115595@163.com");
-                user.setId("001");
                 realm.commitTransaction();
                 break;
             case R.id.activity_realm_textview2:
@@ -98,6 +98,9 @@ public class RealmActivity extends Activity {
                 break;
             case R.id.activity_realm_textview8:
 
+                break;
+            case R.id.realm_relativelayout:
+                Toast.makeText(RealmActivity.this,"点击",Toast.LENGTH_SHORT).show();
                 break;
         }
     }
