@@ -8,6 +8,7 @@ import android.view.View;
 import com.example.kangxin.myproject.activity.Android6Activity;
 import com.example.kangxin.myproject.activity.Android7Activity;
 import com.example.kangxin.myproject.activity.ButterKnifeActivity;
+import com.example.kangxin.myproject.activity.Glide4Activity;
 import com.example.kangxin.myproject.activity.MoneyInputActivity;
 import com.example.kangxin.myproject.activity.MyShowLightDialog;
 import com.example.kangxin.myproject.activity.OkhttpUtilsActivity;
@@ -24,6 +25,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    public void click13(View veiw){
+        startActivity(new Intent(MainActivity.this, Glide4Activity.class));
+    }
+    public void click12(View veiw){
+        startActivity(new Intent(MainActivity.this, Glide4Activity.class));
     }
     public void click11(View veiw){
         startActivity(new Intent(MainActivity.this, ThreadPoolActivity.class));

@@ -52,7 +52,9 @@
         <activity android:name=".activity.Android7Activity" />
         <activity android:name=".activity.Rxjava2Activity" />
         <activity android:name=".activity.RealmActivity" />
-        <activity android:name=".activity.ThreadPoolActivity"></activity>
+        <activity android:name=".activity.ThreadPoolActivity" />
+        <activity android:name=".activity.Glide4Activity" />
+        <activity android:name=".activity.TryCatchActivity"></activity>
     </application>
 
 </manifest>
