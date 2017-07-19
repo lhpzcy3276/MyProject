@@ -54,7 +54,8 @@
         <activity android:name=".activity.RealmActivity" />
         <activity android:name=".activity.ThreadPoolActivity" />
         <activity android:name=".activity.Glide4Activity" />
-        <activity android:name=".activity.TryCatchActivity"></activity>
+        <activity android:name=".activity.TryCatchActivity" />
+        <activity android:name=".activity.Dialog_Loading_Activity"></activity>
     </application>
 
 </manifest>

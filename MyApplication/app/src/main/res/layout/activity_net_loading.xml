@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="@dimen/mydimen_dp_85"
+            android:layout_height="@dimen/mydimen_dp_95"
+            android:background="@mipmap/loading_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                android:layout_width="@dimen/mydimen_dp_25"
+                android:layout_height="@dimen/mydimen_dp_25"
+                android:layout_gravity="center_horizontal"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/dialog_loading"
+                android:indeterminateOnly="true"
+                />
+
+            <TextView
+                android:id="@+id/tipTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="加载中..."
+                android:textColor="#f0f0f0"
+                android:textSize="@dimen/mydimen_sp_12" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</FrameLayout>
