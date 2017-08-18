@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.example.kangxin.myproject.R;
+import com.example.kangxin.myproject.callback.ExceptionCallBack;
 
 /**
  * Created by kangxin on 17/6/28.
@@ -85,11 +86,10 @@ public class PublicStaticMethod {
     }
 
     public static void startLoadingActivity(final Activity activity){
-        if (!NETLOADINGISSHOW){
-            NETLOADINGISSHOW=true;
+        if (loadingDialog==null||!loadingDialog.isShowing()){
             loadingDialog = new Dialog(activity, R.style.MyDialogStyle);
             loadingDialog.setContentView(R.layout.activity_net_loading);
-            loadingDialog.setCanceledOnTouchOutside(true);
+            loadingDialog.setCanceledOnTouchOutside(true);//点击外部是否消失
             /**
              *将显示Dialog的方法封装在这里面
              */
@@ -107,18 +107,35 @@ public class PublicStaticMethod {
                     clossLoadingActivity();
                 }
             });
-            loadingDialog.show();
+            try {
+                loadingDialog.show();
+            }catch (Exception e){
+                Log.d("崩溃时候走这个方法了吗",e.getMessage());
+                clossLoadingActivity();
+            }
 
         }
     }
 
     public static void clossLoadingActivity() {
-        if (NETLOADINGISSHOW){
-            NETLOADINGISSHOW=false;
-            if (loadingDialog!=null){
+        if (loadingDialog!=null){
+            if (loadingDialog.isShowing()){
                 loadingDialog.dismiss();
-                loadingDialog=null;
             }
+            loadingDialog=null;
+        }
+    }
+
+
+    /**
+     * 隐藏异常不至于导致崩溃
+     * @param callBack
+     */
+    public static void catchException(ExceptionCallBack callBack){
+        try {
+            callBack.tryCallBack();
+        }catch (Exception e){
+            Log.e("数据报错",e.getMessage());
         }
     }
 }

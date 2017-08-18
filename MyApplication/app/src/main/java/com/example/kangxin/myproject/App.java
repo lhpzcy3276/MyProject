@@ -4,6 +4,7 @@ package com.example.kangxin.myproject;
 
 import android.app.Application;
 
+import com.example.kangxin.myproject.db.Migration;
 import com.growingio.android.sdk.collection.Configuration;
 import com.growingio.android.sdk.collection.GrowingIO;
 
@@ -22,10 +23,11 @@ public class App extends Application {
         super.onCreate();
         INSTANCE = this;
         Realm.init(this);
-        RealmConfiguration configuration=new  RealmConfiguration.Builder()
-                .name("myRealm.realm")
-                .deleteRealmIfMigrationNeeded()
+        RealmConfiguration configuration=new RealmConfiguration.Builder()
+                .schemaVersion(0)
+                .migration(new Migration())
                 .build();
+
         Realm.setDefaultConfiguration(configuration);
 
 

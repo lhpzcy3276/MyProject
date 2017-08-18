@@ -43,6 +43,7 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
     private TextView mTv;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,36 +56,29 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
     }
 
 
-
-    public class MyStringCallback extends StringCallback
-    {
+    public class MyStringCallback extends StringCallback {
         @Override
-        public void onBefore(Request request, int id)
-        {
+        public void onBefore(Request request, int id) {
             setTitle("loading...");
         }
 
         @Override
-        public void onAfter(int id)
-        {
+        public void onAfter(int id) {
             setTitle("Sample-okHttp");
         }
 
         @Override
-        public void onError(Call call, Exception e, int id)
-        {
+        public void onError(Call call, Exception e, int id) {
             e.printStackTrace();
             mTv.setText("onError:" + e.getMessage());
         }
 
         @Override
-        public void onResponse(String response, int id)
-        {
+        public void onResponse(String response, int id) {
             Log.e(TAG, "onResponse：complete");
             mTv.setText("onResponse:" + response);
 
-            switch (id)
-            {
+            switch (id) {
                 case 100:
                     Toast.makeText(OkhttpUtilsActivity.this, "http", Toast.LENGTH_SHORT).show();
                     break;
@@ -95,18 +89,16 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
         }
 
         @Override
-        public void inProgress(float progress, long total, int id)
-        {
+        public void inProgress(float progress, long total, int id) {
             Log.e(TAG, "inProgress:" + progress);
             mProgressBar.setProgress((int) (100 * progress));
         }
     }
 
 
-    public void getHtml(View view)
-    {
+    public void getHtml(View view) {
         String url = "http://www.zhiyun-tech.com/App/Rider-M/changelog-zh.txt";
-        url="http://www.391k.com/api/xapi.ashx/info.json?key=bd_hyrzjjfb4modhj&size=10&page=1";
+        url = "http://www.391k.com/api/xapi.ashx/info.json?key=bd_hyrzjjfb4modhj&size=10&page=1";
         OkHttpUtils
                 .get()
                 .url(url)
@@ -116,8 +108,7 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
     }
 
 
-    public void postString(View view)
-    {
+    public void postString(View view) {
         String url = mBaseUrl + "user!postString";
         OkHttpUtils
                 .postString()
@@ -129,11 +120,9 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
 
     }
 
-    public void postFile(View view)
-    {
+    public void postFile(View view) {
         File file = new File(Environment.getExternalStorageDirectory(), "messenger_01.png");
-        if (!file.exists())
-        {
+        if (!file.exists()) {
             Toast.makeText(OkhttpUtilsActivity.this, "文件不存在，请修改文件路径", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -148,8 +137,7 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
 
     }
 
-    public void getUser(View view)
-    {
+    public void getUser(View view) {
         String url = mBaseUrl + "user!getUser";
         OkHttpUtils
                 .post()//
@@ -157,25 +145,21 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
                 .addParams("username", "hyman")//
                 .addParams("password", "123")//
                 .build()//
-                .execute(new GenericsCallback<User>(new JsonGenericsSerializator())
-                {
+                .execute(new GenericsCallback<User>(new JsonGenericsSerializator()) {
                     @Override
-                    public void onError(Call call, Exception e, int id)
-                    {
+                    public void onError(Call call, Exception e, int id) {
                         mTv.setText("onError:" + e.getMessage());
                     }
 
                     @Override
-                    public void onResponse(User response, int id)
-                    {
+                    public void onResponse(User response, int id) {
                         mTv.setText("onResponse:" + response.getName());
                     }
                 });
     }
 
 
-    public void getUsers(View view)
-    {
+    public void getUsers(View view) {
         Map<String, String> params = new HashMap<String, String>();
         params.put("name", "zhy");
         String url = mBaseUrl + "user!getUsers";
@@ -187,22 +171,19 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
                 .execute(new ListUserCallback()//
                 {
                     @Override
-                    public void onError(Call call, Exception e, int id)
-                    {
+                    public void onError(Call call, Exception e, int id) {
                         mTv.setText("onError:" + e.getMessage());
                     }
 
                     @Override
-                    public void onResponse(List<User> response, int id)
-                    {
+                    public void onResponse(List<User> response, int id) {
                         mTv.setText("onResponse:" + response);
                     }
                 });
     }
 
 
-    public void getHttpsHtml(View view)
-    {
+    public void getHttpsHtml(View view) {
         String url = "https://kyfw.12306.cn/otn/";
 
 //                "https://12
@@ -216,8 +197,7 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
 
     }
 
-    public void getImage(View view)
-    {
+    public void getImage(View view) {
         mTv.setText("");
         String url = "http://images.csdn.net/20150817/1.jpg";
         OkHttpUtils
@@ -228,17 +208,14 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
                 .connTimeOut(20000)
                 .readTimeOut(20000)
                 .writeTimeOut(20000)
-                .execute(new BitmapCallback()
-                {
+                .execute(new BitmapCallback() {
                     @Override
-                    public void onError(Call call, Exception e, int id)
-                    {
+                    public void onError(Call call, Exception e, int id) {
                         mTv.setText("onError:" + e.getMessage());
                     }
 
                     @Override
-                    public void onResponse(Bitmap bitmap, int id)
-                    {
+                    public void onResponse(Bitmap bitmap, int id) {
                         Log.e("TAG", "onResponse：complete");
                         mImageView.setImageBitmap(bitmap);
                     }
@@ -246,12 +223,10 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
     }
 
 
-    public void uploadFile(View view)
-    {
+    public void uploadFile(View view) {
 
         File file = new File(Environment.getExternalStorageDirectory(), "messenger_01.png");
-        if (!file.exists())
-        {
+        if (!file.exists()) {
             Toast.makeText(OkhttpUtilsActivity.this, "文件不存在，请修改文件路径", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -275,12 +250,10 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
     }
 
 
-    public void multiFileUpload(View view)
-    {
+    public void multiFileUpload(View view) {
         File file = new File(Environment.getExternalStorageDirectory(), "messenger_01.png");
         File file2 = new File(Environment.getExternalStorageDirectory(), "test1#.txt");
-        if (!file.exists())
-        {
+        if (!file.exists()) {
             Toast.makeText(OkhttpUtilsActivity.this, "文件不存在，请修改文件路径", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -299,8 +272,7 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
     }
 
 
-    public void downloadFile(View view)
-    {
+    public void downloadFile(View view) {
         String url = "https://github.com/hongyangAndroid/okhttp-utils/blob/master/okhttputils-2_4_1.jar?raw=true";
         OkHttpUtils//
                 .get()//
@@ -310,34 +282,29 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
                 {
 
                     @Override
-                    public void onBefore(Request request, int id)
-                    {
+                    public void onBefore(Request request, int id) {
                     }
 
                     @Override
-                    public void inProgress(float progress, long total, int id)
-                    {
+                    public void inProgress(float progress, long total, int id) {
                         mProgressBar.setProgress((int) (100 * progress));
                         Log.e(TAG, "inProgress :" + (int) (100 * progress));
                     }
 
                     @Override
-                    public void onError(Call call, Exception e, int id)
-                    {
+                    public void onError(Call call, Exception e, int id) {
                         Log.e(TAG, "onError :" + e.getMessage());
                     }
 
                     @Override
-                    public void onResponse(File file, int id)
-                    {
+                    public void onResponse(File file, int id) {
                         Log.e(TAG, "onResponse :" + file.getAbsolutePath());
                     }
                 });
     }
 
 
-    public void otherRequestDemo(View view)
-    {
+    public void otherRequestDemo(View view) {
         //also can use delete ,head , patch
         /*
         OkHttpUtils
@@ -362,19 +329,16 @@ public class OkhttpUtilsActivity extends AppCompatActivity {
 
     }
 
-    public void clearSession(View view)
-    {
+    public void clearSession(View view) {
         CookieJar cookieJar = OkHttpUtils.getInstance().getOkHttpClient().cookieJar();
-        if (cookieJar instanceof CookieJarImpl)
-        {
+        if (cookieJar instanceof CookieJarImpl) {
             ((CookieJarImpl) cookieJar).getCookieStore().removeAll();
         }
     }
 
 
     @Override
-    protected void onDestroy()
-    {
+    protected void onDestroy() {
         super.onDestroy();
         OkHttpUtils.getInstance().cancelTag(this);
     }

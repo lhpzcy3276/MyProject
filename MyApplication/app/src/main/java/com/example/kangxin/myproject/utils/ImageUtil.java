@@ -100,19 +100,23 @@ public class ImageUtil {
                 .into(imageView);
     }
 
-
+    //圆形裁剪
     public static void load_Center_URL_Circle(ImageView imageView4, String imageurl) {
         Glide.with(App.getInstance())
                 .load(imageurl)
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
                 .bitmapTransform(new CropCircleTransformation(App.getInstance()))
                 .into(imageView4);
     }
+    //圆角处理
     public static void load_Center_URL_Corners(ImageView imageView, String imageurl) {
         Glide.with(App.getInstance())
                 .load(imageurl)
                 .bitmapTransform(new RoundedCornersTransformation(App.getInstance(),30,0,RoundedCornersTransformation.CornerType.ALL))
                 .into(imageView);
     }
+    //灰度处理
     public static void load_Center_URL_Gray(ImageView imageView, String imageurl) {
         Glide.with(App.getInstance())
                 .load(imageurl)

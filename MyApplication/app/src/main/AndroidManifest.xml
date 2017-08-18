@@ -31,7 +31,9 @@
         </activity>
         <activity
             android:name=".activity.MyShowLightDialog"
-            android:theme="@style/activity_DialogTransparent" />
+            android:theme="@style/activity_DialogTransparent"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".activity.MoneyInputActivity" />
         <activity android:name=".activity.OkhttpUtilsActivity" />
         <activity android:name=".activity.RetrofitActivity" />

@@ -6,6 +6,8 @@ import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * Created by kangxin on 17/7/13.
+ *
+ * http://blog.csdn.net/seu_calvin/article/details/52415337
  */
 public class ThreadPoolUtils {
     //（一堆人排队上公厕）

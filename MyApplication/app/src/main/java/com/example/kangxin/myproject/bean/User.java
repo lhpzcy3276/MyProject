@@ -41,4 +41,13 @@ public class User extends RealmObject {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", id='" + id + '\'' +
+				'}';
+	}
 }

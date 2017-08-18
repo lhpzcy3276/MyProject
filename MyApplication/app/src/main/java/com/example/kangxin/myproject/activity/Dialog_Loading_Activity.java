@@ -1,6 +1,7 @@
 package com.example.kangxin.myproject.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 
@@ -18,6 +19,12 @@ public class Dialog_Loading_Activity extends Activity {
         setContentView(R.layout.activity_dialog__loading);
         ButterKnife.bind(this);
     }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        return super.onCreateDialog(id);
+    }
+
     @OnClick(R.id.dialog_activity_textview)
     void myclick(View view){
         switch (view.getId()){

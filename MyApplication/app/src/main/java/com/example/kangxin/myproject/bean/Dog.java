@@ -1,6 +1,7 @@
 package com.example.kangxin.myproject.bean;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by kangxin on 17/7/12.
@@ -8,6 +9,8 @@ import io.realm.RealmObject;
 public class Dog extends RealmObject {
     private String name;
     private int age;
+
+    @PrimaryKey
     private String id;
 
     public String getName() {
