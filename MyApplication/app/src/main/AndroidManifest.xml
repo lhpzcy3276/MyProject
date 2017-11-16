@@ -31,9 +31,8 @@
         </activity>
         <activity
             android:name=".activity.MyShowLightDialog"
-            android:theme="@style/activity_DialogTransparent"
             android:screenOrientation="portrait"
-            />
+            android:theme="@style/activity_DialogTransparent" />
         <activity android:name=".activity.MoneyInputActivity" />
         <activity android:name=".activity.OkhttpUtilsActivity" />
         <activity android:name=".activity.RetrofitActivity" />
@@ -57,7 +56,15 @@
         <activity android:name=".activity.ThreadPoolActivity" />
         <activity android:name=".activity.Glide4Activity" />
         <activity android:name=".activity.TryCatchActivity" />
-        <activity android:name=".activity.Dialog_Loading_Activity"></activity>
+        <activity android:name=".activity.Dialog_Loading_Activity" />
+        <activity android:name=".activity.CropActivity" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".activity.EventBusActivity01" />
+        <activity android:name=".activity.EventBusActivity2" />
+        <activity android:name=".activity.JsonActivity"></activity>
     </application>
 
 </manifest>

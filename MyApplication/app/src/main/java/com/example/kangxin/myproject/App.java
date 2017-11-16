@@ -4,12 +4,6 @@ package com.example.kangxin.myproject;
 
 import android.app.Application;
 
-import com.example.kangxin.myproject.db.Migration;
-import com.growingio.android.sdk.collection.Configuration;
-import com.growingio.android.sdk.collection.GrowingIO;
-
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
 
 public class App extends Application {
     private static App INSTANCE;
@@ -22,18 +16,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         INSTANCE = this;
-        Realm.init(this);
-        RealmConfiguration configuration=new RealmConfiguration.Builder()
-                .schemaVersion(0)
-                .migration(new Migration())
-                .build();
-
-        Realm.setDefaultConfiguration(configuration);
 
 
-        //growing 无埋点统计
-        GrowingIO.startWithConfiguration(this,new Configuration().useID()
-        .trackAllFragments()
-        .setChannel("应用宝"));
     }
 }

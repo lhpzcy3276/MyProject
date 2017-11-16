@@ -13,12 +13,14 @@ import android.widget.Toast;
 import com.example.kangxin.myproject.activity.Android6Activity;
 import com.example.kangxin.myproject.activity.Android7Activity;
 import com.example.kangxin.myproject.activity.ButterKnifeActivity;
+import com.example.kangxin.myproject.activity.CropActivity;
 import com.example.kangxin.myproject.activity.Dialog_Loading_Activity;
+import com.example.kangxin.myproject.activity.EventBusActivity01;
+import com.example.kangxin.myproject.activity.EventBusActivity2;
 import com.example.kangxin.myproject.activity.Glide4Activity;
+import com.example.kangxin.myproject.activity.JsonActivity;
 import com.example.kangxin.myproject.activity.MoneyInputActivity;
 import com.example.kangxin.myproject.activity.MyShowLightDialog;
-import com.example.kangxin.myproject.activity.OkhttpUtilsActivity;
-import com.example.kangxin.myproject.activity.RealmActivity;
 import com.example.kangxin.myproject.activity.RetrofitActivity;
 import com.example.kangxin.myproject.activity.RxJavaActivity;
 import com.example.kangxin.myproject.activity.Rxjava2Activity;
@@ -35,8 +37,26 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         registerRec();
     }
+    public void click20(View veiw){
+        startActivity(new Intent(MainActivity.this, JsonActivity.class));
 
+    }
+    public void click19(View veiw){
+        startActivity(new Intent(MainActivity.this, EventBusActivity2.class));
 
+    }
+    public void click18(View veiw){
+        startActivity(new Intent(MainActivity.this, EventBusActivity2.class));
+
+    }
+    public void click17(View veiw){
+        startActivity(new Intent(MainActivity.this, EventBusActivity01.class));
+
+    }
+    public void click16(View veiw){
+        startActivity(new Intent(MainActivity.this, CropActivity.class));
+
+    }
     public void click15(View veiw){
         LocalBroadcastManager manager= LocalBroadcastManager.getInstance(this);
         Intent intent=new Intent("aa.aa.bb");
@@ -55,9 +75,6 @@ public class MainActivity extends Activity {
     public void click11(View veiw){
         startActivity(new Intent(MainActivity.this, ThreadPoolActivity.class));
     }
-    public void click10(View veiw){
-        startActivity(new Intent(MainActivity.this, RealmActivity.class));
-    }
     public void click9(View veiw){
         startActivity(new Intent(MainActivity.this, Rxjava2Activity.class));
     }
@@ -75,9 +92,6 @@ public class MainActivity extends Activity {
     }
     public void click4(View veiw){
         startActivity(new Intent(MainActivity.this, RetrofitActivity.class));
-    }
-    public void click3(View veiw){
-        startActivity(new Intent(MainActivity.this, OkhttpUtilsActivity.class));
     }
     public void click2(View veiw){
         startActivity(new Intent(MainActivity.this,MoneyInputActivity.class));
