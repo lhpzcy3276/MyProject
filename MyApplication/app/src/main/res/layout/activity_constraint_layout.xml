@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kangxin.myproject.activity.ConstraintLayoutActivity">
+
+    <TextView
+        android:id="@+id/constaint_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:text="111" />
+
+    <TextView
+        android:id="@+id/constaint_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:text="222"
+        app:layout_constraintLeft_toRightOf="@id/constaint_tv1"
+        app:layout_constraintTop_toBottomOf="@id/constaint_tv1"
+        app:layout_goneMarginLeft="@dimen/mydimen_dp_85" />
+
+    <TextView
+        android:id="@+id/constaint_tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@android:color/holo_red_light"
+        android:text="33"
+        app:layout_constraintDimensionRatio="1:2"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/constaint_tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:text="444"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/constaint_tv5"
+        app:layout_constraintTop_toBottomOf="@id/constaint_tv2" />
+
+    <TextView
+        android:id="@+id/constaint_tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:text="555"
+        app:layout_constraintLeft_toRightOf="@id/constaint_tv4"
+        app:layout_constraintRight_toLeftOf="@id/constaint_tv6"
+        app:layout_constraintTop_toBottomOf="@id/constaint_tv2" />
+
+    <TextView
+        android:id="@+id/constaint_tv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:text="666"
+        app:layout_constraintLeft_toRightOf="@id/constaint_tv5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constaint_tv2" />
+
+</android.support.constraint.ConstraintLayout>

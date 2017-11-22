@@ -21,6 +21,7 @@ import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
@@ -29,6 +30,8 @@ import android.net.Uri;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.view.inputmethod.InputMethodManager;
+
+import com.example.kangxin.myproject.App;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -356,5 +359,17 @@ public class DvAppUtil {
         return info;
     }
 
-
+    /**
+     * 获取版本号
+     */
+    public static String getVersionName() {
+        try {
+            PackageInfo pi = App.getInstance().getPackageManager().getPackageInfo(
+                    App.getInstance().getPackageName(), 0);
+            return String.valueOf(pi.versionName);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
 }

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.kangxin.myproject.activity.Android6Activity;
 import com.example.kangxin.myproject.activity.Android7Activity;
 import com.example.kangxin.myproject.activity.ButterKnifeActivity;
+import com.example.kangxin.myproject.activity.ConstraintLayoutActivity;
 import com.example.kangxin.myproject.activity.CropActivity;
 import com.example.kangxin.myproject.activity.Dialog_Loading_Activity;
 import com.example.kangxin.myproject.activity.EventBusActivity01;
@@ -36,6 +37,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         registerRec();
+    }
+
+    public void click21(View veiw){
+        startActivity(new Intent(MainActivity.this, ConstraintLayoutActivity.class));
+
     }
     public void click20(View veiw){
         startActivity(new Intent(MainActivity.this, JsonActivity.class));

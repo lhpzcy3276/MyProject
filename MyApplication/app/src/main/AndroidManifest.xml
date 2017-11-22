@@ -7,6 +7,13 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <!--网络权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--外部存储读权限，调试工具加载本地补丁需要-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -14,6 +21,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="24707234-1" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="462e506c96f3d0bb5feb1ea842b20ea4" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDc8GpdQhZl4VlF72F2aSe+suBGmwUAnPiQbCkAHoE/mT6jhhuERGkQVBMcr3hGJJs2cRaZF5s9Qrfe7ND5CYJybjpveciO7YvOltIkZD934nBzeDCbWrBKZqjeOi0N4ce5kL3UpITHKQeQsViB6D0LZLueHymn73AcnLh1QLW/odST72ceE2+K3VHUEAczkD/ptP4LvkdaqWYE3r6yjOcan4BcR5PoJgCvniEQWwbRngkdoDbsppjGfNseV/5fewSZ6iEPCNnewrDY0XKIcsObfP6+CSNzskZHN6nsmnWUA2lEwdWfno4u7y5D2ucbBzfKBddke0U5xstXGf5pIycNAgMBAAECggEBAMgIw8R7uVu0k+dFvLBAtMNroLNMV1Mey822n8iD1fGHBbd4DCHM7nLiLAuksviO3BiGezdQsDTe2yryrqFLgteoBTA4yuTdHd+Fne1k9jHMypNBFoERstsp52qMsY4IBZR0/+ouqijHdRoD92Zmph5SrauT+1sY5iCBpGBEnklIxJaWLsIKcjhic+n8of26rs0qPB8C3M+C6njkwqehTxTdaavxSmFyWO8MePubHhtSAYTbYNY3Ptj+8GiVnOzsueSngQV6J3Ns9YfagHEvp+x2HvgBGKE1X4tkVCANQZd/TrGLqVAu7JJ/asA8mbFFUwycazLvXs/JtNeouEyaXOECgYEA/Al54E/da2rYXMDDVBPUWcSIzudcelgB7vAznWLU+YAYfeIj8xIgcuYfay77tja+vbLkOBqY+uragWM/zR+TyJ+m62FB8bEfJRTBowU3q0l/jDib7cGqZzKtFTJTPaqugrhQUdSdZEuXqux5MuMmKw7/MeIEyyA7ZhGIXpI54bsCgYEA4GnC2jGKdOir0f0amdBlzFzpC9yyuQQJNDVJ63LWg6ZHF/lrOGGDHDnI0I9zJ12tFqXfWVjndJOcPDjpS/zvuus+Ctu813u6W0BIPelB9XEqcMTdjegXH7lepSNWObhik5H0qR84ikh9Ll28OrL3BHBEowb9j/OcJmna3bPVCdcCgYEA2iAdYZvdJo0W6ddOdWKgAnzMZjzn1V57dd5e3VReu/w3tiLUOBc1DBvLj0jfQgjJNYYwa7nhMi+1ogtSeWVd0mER5l6K4vEG4mG/YCYw0sZOY/3OPYvBvYSnNVQTpKgmVi3MHbYj7Vxay+vSzM64BsX46KQSv/WKUsDTw/1LqOcCgYEAyjGARmdsgHlCliid1whVMBRmRTHMNbbVNBzvRRxq+qLOW2N2n438O2o07PTSpB1a3pUE79OSdw6oLfp4+OYkeR2LAO2K7/uipKT+cgnATAxyWLiHhlweuY6jH9b+0XK4Ho3bCqX+o1k8sJH0Dk9BENa2gMzDmPe9MT8e27IzuHECgYBl3RyDYAl0rfzOvTGGD+WaE4alNYKhacx+iNB3h6/ualrfouqS/s3/1PaTXNRqYIi7LcRfDxgl49/QR8Ck++IerWH3gWRmlcNWdknWcClKGzbWq07VMOqZj1KdvDegWaRO5A56N4fbL0pHXnykSBuBqtnOpG1YRqxBsbnVoab2kA==" />
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +53,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/activity_DialogTransparent" />
         <activity android:name=".activity.MoneyInputActivity" />
-        <activity android:name=".activity.OkhttpUtilsActivity" />
         <activity android:name=".activity.RetrofitActivity" />
         <activity android:name=".activity.RxJavaActivity" />
         <activity android:name=".activity.ButterKnifeActivity" />
@@ -52,7 +70,6 @@
 
         <activity android:name=".activity.Android7Activity" />
         <activity android:name=".activity.Rxjava2Activity" />
-        <activity android:name=".activity.RealmActivity" />
         <activity android:name=".activity.ThreadPoolActivity" />
         <activity android:name=".activity.Glide4Activity" />
         <activity android:name=".activity.TryCatchActivity" />
@@ -64,7 +81,8 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".activity.EventBusActivity01" />
         <activity android:name=".activity.EventBusActivity2" />
-        <activity android:name=".activity.JsonActivity"></activity>
+        <activity android:name=".activity.JsonActivity" />
+        <activity android:name=".activity.ConstraintLayoutActivity"></activity>
     </application>
 
 </manifest>
