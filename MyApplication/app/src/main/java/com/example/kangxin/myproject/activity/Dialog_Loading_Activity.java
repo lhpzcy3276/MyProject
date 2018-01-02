@@ -11,7 +11,7 @@ import com.example.kangxin.myproject.utils.PublicStaticMethod;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Dialog_Loading_Activity extends Activity {
+public class Dialog_Loading_Activity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

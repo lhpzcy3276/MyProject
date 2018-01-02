@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.kangxin.myproject.activity.Android6Activity;
 import com.example.kangxin.myproject.activity.Android7Activity;
+import com.example.kangxin.myproject.activity.BadgeActivity;
 import com.example.kangxin.myproject.activity.ButterKnifeActivity;
 import com.example.kangxin.myproject.activity.ConstraintLayoutActivity;
 import com.example.kangxin.myproject.activity.CropActivity;
@@ -20,12 +21,15 @@ import com.example.kangxin.myproject.activity.EventBusActivity01;
 import com.example.kangxin.myproject.activity.EventBusActivity2;
 import com.example.kangxin.myproject.activity.Glide4Activity;
 import com.example.kangxin.myproject.activity.JsonActivity;
+import com.example.kangxin.myproject.activity.MaterialDesignActivity;
 import com.example.kangxin.myproject.activity.MoneyInputActivity;
 import com.example.kangxin.myproject.activity.MyShowLightDialog;
 import com.example.kangxin.myproject.activity.RetrofitActivity;
 import com.example.kangxin.myproject.activity.RxJavaActivity;
 import com.example.kangxin.myproject.activity.Rxjava2Activity;
+import com.example.kangxin.myproject.activity.SpannableStringActivity;
 import com.example.kangxin.myproject.activity.ThreadPoolActivity;
+import com.example.kangxin.myproject.utils.PublicStaticMethod;
 
 
 public class MainActivity extends Activity {
@@ -38,7 +42,22 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         registerRec();
     }
+    public void click25(View veiw){
+        startActivity(new Intent(this, MaterialDesignActivity.class));
 
+    }
+    public void click24(View veiw){
+        startActivity(new Intent(this, BadgeActivity.class));
+
+    }
+    public void click23(View veiw){
+        startActivity(new Intent(this, SpannableStringActivity.class));
+
+    }
+     public void click22(View veiw){
+        PublicStaticMethod.switchCase(2);
+
+    }
     public void click21(View veiw){
         startActivity(new Intent(MainActivity.this, ConstraintLayoutActivity.class));
 

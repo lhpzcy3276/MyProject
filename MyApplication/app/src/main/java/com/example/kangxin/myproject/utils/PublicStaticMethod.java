@@ -138,4 +138,14 @@ public class PublicStaticMethod {
             Log.e("数据报错",e.getMessage());
         }
     }
+
+    public static void switchCase(int i) {
+        switch (i){
+            case 1:
+                break;
+            case 2:
+                return;
+        }
+        LogUtil.d("switch-case-return");
+    }
 }

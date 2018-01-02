@@ -9,7 +9,7 @@ import android.util.Log;
  */
 public class LogUtil {
     public static boolean IS_DEBUG = true;
-    private static String TAG = LogUtil.class.getSimpleName();
+    private static String TAG = "================";
 
     /**
      * 开启Log,默认不开启

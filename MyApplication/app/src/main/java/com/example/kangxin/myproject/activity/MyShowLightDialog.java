@@ -23,7 +23,7 @@ import java.util.Random;
 /**
  * activity样式的dialog
  */
-public class MyShowLightDialog extends Activity implements View.OnClickListener {
+public class MyShowLightDialog extends BaseActivity implements View.OnClickListener {
     private Button yes;//确定按钮
     private Button no;//取消按钮
     private TextView titleTv;//消息标题文本

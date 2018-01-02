@@ -20,7 +20,7 @@ import butterknife.OnClick;
  *
  *
  */
-public class Glide4Activity extends Activity {
+public class Glide4Activity extends BaseActivity {
     @BindView(R.id.activity_glide_imageview1)
     ImageView imageView1;
     @BindView(R.id.activity_glide_imageview2)

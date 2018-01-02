@@ -19,7 +19,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 
-public class RxJavaActivity extends Activity {
+public class RxJavaActivity extends BaseActivity {
     String TAG=getClass().getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

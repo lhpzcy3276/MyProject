@@ -3,8 +3,13 @@
 package com.example.kangxin.myproject;
 
 import android.app.Application;
+import android.content.Context;
 
+import com.example.kangxin.myproject.callback.ForegroundCallbacks;
+import com.example.kangxin.myproject.utils.BadgeUtil;
 import com.example.kangxin.myproject.utils.DvAppUtil;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 import com.taobao.sophix.PatchStatus;
 import com.taobao.sophix.SophixManager;
 import com.taobao.sophix.listener.PatchLoadStatusListener;
@@ -12,7 +17,7 @@ import com.taobao.sophix.listener.PatchLoadStatusListener;
 
 public class App extends Application {
     private static App INSTANCE;
-
+    private RefWatcher refWatcher;
     public static App getInstance() {
         return INSTANCE;
     }
@@ -21,8 +26,15 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         INSTANCE = this;
-
+//        RongIM.init(this);
         init();
+        ForegroundCallbacks.init(this);
+        refWatcher= LeakCanary.install(this);
+
+    }
+    public static RefWatcher getRefWatcher(Context context) {
+        App application = (App) context.getApplicationContext();
+        return application.refWatcher;
     }
 
     private void init() {

@@ -65,4 +65,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constaint_tv2" />
 
+   <TextView
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:text="akjdfa;"
+       app:layout_constraintTop_toBottomOf="@id/constaint_tv6"
+       android:background="@android:color/darker_gray"
+       app:layout_constraintDimensionRatio="8:1"
+       />
+
 </android.support.constraint.ConstraintLayout>

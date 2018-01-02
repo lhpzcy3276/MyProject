@@ -6,14 +6,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.example.kangxin.myproject.activity.RetrofitActivity">
-   <android.support.design.widget.TabLayout
-       android:id="@+id/retrofit_tablayout"
+   <Button
+       android:id="@+id/retrofitActivity1"
        android:layout_width="match_parent"
-       android:layout_height="@dimen/my_dimen_40"
-       app:tabMode="scrollable"
+       android:layout_height="wrap_content"
+        android:text="retrofitActivity1"
+       android:gravity="center"
        />
-   <android.support.v4.view.ViewPager
-       android:id="@+id/retrofit_viewpager"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/retrofitActivity_textview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="retrofitActivity1"
+        android:gravity="center"
+        />
 </LinearLayout>

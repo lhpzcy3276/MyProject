@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.kangxin.myproject.R;
 
-public class TryCatchActivity extends Activity {
+public class TryCatchActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -21,7 +21,7 @@ import java.util.Locale;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Android7Activity extends Activity {
+public class Android7Activity extends BaseActivity {
 
     private static final int REQUEST_CODE_TAKE_PHOTO = 1;
 

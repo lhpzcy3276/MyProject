@@ -16,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class JsonActivity extends Activity {
+public class JsonActivity extends BaseActivity {
     @BindView(R.id.json_textview1)
     TextView textView1;
     @BindView(R.id.json_textview2)

@@ -2,8 +2,10 @@ package com.example.kangxin.myproject.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.kangxin.myproject.R;
+import com.example.kangxin.myproject.utils.LogUtil;
 
 
 import org.reactivestreams.Publisher;
@@ -14,114 +16,136 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
 import io.reactivex.FlowableOnSubscribe;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
+import io.reactivex.schedulers.Schedulers;
 
-public class Rxjava2Activity extends Activity {
-
+public class Rxjava2Activity extends BaseActivity {
+    private String Tag="Rxjava2Activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rxjava2);
-        flowable.subscribe(subscriber);
+        ButterKnife.bind(this);
+        LogUtil.d(Tag+ Thread.currentThread().getName());
+    }
+    @OnClick({R.id.rxjava_button1,R.id.rxjava_button2,R.id.rxjava_button3,R.id.rxjava_button4,R.id.rxjava_button5,R.id.rxjava_button6,R.id.rxjava_button7,R.id.rxjava_button8})
+    void mclick(View view){
+        switch (view.getId()){
+            case R.id.rxjava_button1:
+                rxjava1();
+                break;
+            case R.id.rxjava_button2:
+                rxjava2();
+                break;
+            case R.id.rxjava_button3:
+                rxjava3();
+                break;
+            case R.id.rxjava_button4:
+                break;
+            case R.id.rxjava_button5:
+                break;
+            case R.id.rxjava_button6:
+                break;
+            case R.id.rxjava_button7:
+                break;
+            case R.id.rxjava_button8:
+                break;
 
-        flowable.subscribe(consumer);
+        }
+    }
 
-        Flowable.just("map")
-                .map(new Function<String, String>() {
-                    @Override
-                    public String apply(String s) throws Exception {
-                        return s+"-ittianyu";
-                    }
-                })
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        System.out.println(s);
-                    }
-                });
 
-        List<Integer> list=new ArrayList<>();
-        list.add(10);
-        list.add(1);
-        list.add(5);
-        Flowable.fromIterable(list)
-                .subscribe(new Consumer<Integer>() {
+
+    private void rxjava1() {
+        Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
-            public void accept(Integer integer) throws Exception {
-                System.out.println(integer);
+            public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+                LogUtil.d(Tag+ "Observable thread is : " + Thread.currentThread().getName());
+                e.onNext(1);
+                e.onNext(2);
+                e.onNext(3);
+                e.onComplete();
+            }
+        }).subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                LogUtil.d(Tag+"onSubscribe");
+            }
+
+            @Override
+            public void onNext(Integer value) {
+                LogUtil.d(Tag+value);
+                LogUtil.d(Tag+ "Observer thread is :" + Thread.currentThread().getName());
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                LogUtil.d(Tag+"error");
+            }
+
+            @Override
+            public void onComplete() {
+                LogUtil.d(Tag+"onComplete");
             }
         });
 
+    }
 
-        Flowable.just(list).flatMap(new Function<List<Integer>,Publisher<Integer>>() {
+    private void rxjava2() {
+        Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
-            public Publisher<Integer> apply(List<Integer> integers) throws Exception {
-                return Flowable.fromIterable(integers);
+            public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+                LogUtil.d(Tag+"Observable thread is : " + Thread.currentThread().getName());
+                LogUtil.d(Tag+"emit 1");
+                e.onNext(1);
             }
-        })
-        .subscribe(new Consumer<Integer>() {
-            @Override
-            public void accept(Integer integer) throws Exception {
-                System.out.println(integer);
-            }
-        });
-
-        Flowable.fromArray(1,20,5,0,-1,8)
-                .filter(new Predicate<Integer>() {
-                    @Override
-                    public boolean test(Integer integer) throws Exception {
-                        return integer.intValue()>5;
-                    }
-                })
+        }).subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        System.out.println(integer);
+                        LogUtil.d(Tag+"Observer thread is :" + Thread.currentThread().getName());
+                        LogUtil.d(Tag+ "onNext: " + integer);
                     }
                 });
+
     }
-
-    Flowable<String> flowable=Flowable.create(new FlowableOnSubscribe<String>() {
-        @Override
-        public void subscribe(FlowableEmitter<String> e) throws Exception {
-          e.onNext("hello RxJava2");
-          e.onComplete();
-        }
-    }, BackpressureStrategy.BUFFER);
-
-    Subscriber subscriber=new Subscriber<String>(){
-        @Override
-        public void onSubscribe(Subscription s) {
-            System.out.println("onSubscribe");
-            s.request(Long.MAX_VALUE);
-        }
-
-        @Override
-        public void onNext(String s) {
-            System.out.println(s);
-        }
-
-        @Override
-        public void onError(Throwable t) {
-
-        }
-
-        @Override
-        public void onComplete() {
-            System.out.println("onComplete");
-        }
-    };
-
-    Consumer consumer=new Consumer<String>(){
-        @Override
-        public void accept(String s) throws Exception {
-            System.out.println(s);
-        }
-    };
+    private void rxjava3() {
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+                LogUtil.d(Tag+"subscribe"+Thread.currentThread().getName());
+                e.onNext(1);
+            }
+        }).map(new Function<Integer, String>() {
+            @Override
+            public String apply(Integer integer) throws Exception {
+                LogUtil.d(Tag+"map"+Thread.currentThread().getName());
+                return integer+"转字符串";
+            }
+        }).subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+            @Override
+            public void accept(String s) throws Exception {
+                LogUtil.d(Tag+"subscribeOn"+Thread.currentThread().getName());
+                LogUtil.d(Tag+s);
+            }
+        });
+    }
 }

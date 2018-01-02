@@ -18,7 +18,7 @@ import butterknife.OnLongClick;
  * http://www.cnblogs.com/zhaoyanjun/p/6016341.html
  * 学信资源链接  http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/0429/4193.html
  */
-public class ButterKnifeActivity extends Activity {
+public class ButterKnifeActivity extends BaseActivity {
     @BindView(R.id.butterknife_textview) TextView mTextView;
     @BindView(R.id.butterknife_view) View mView;
     @Override

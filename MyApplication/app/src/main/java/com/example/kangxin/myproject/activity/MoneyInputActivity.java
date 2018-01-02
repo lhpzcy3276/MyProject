@@ -8,7 +8,7 @@ import android.widget.EditText;
 import com.example.kangxin.myproject.R;
 import com.example.kangxin.myproject.utils.PublicStaticMethod;
 
-public class MoneyInputActivity extends Activity {
+public class MoneyInputActivity extends BaseActivity {
     EditText mEditText;
     EditText mEditTextOne;
     /**

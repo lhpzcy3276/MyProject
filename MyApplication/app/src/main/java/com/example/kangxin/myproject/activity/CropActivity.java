@@ -28,7 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 //http://blog.csdn.net/u011771755/article/details/50676888
-public class CropActivity extends Activity {
+public class CropActivity extends BaseActivity {
     @BindView(R.id.activity_crop_textview1)
     TextView textView1;
     @BindView(R.id.activity_crop_textview2)

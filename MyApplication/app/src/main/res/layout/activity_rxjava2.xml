@@ -6,4 +6,45 @@
     android:orientation="vertical"
     tools:context="com.example.kangxin.myproject.activity.Rxjava2Activity">
 
+    <Button
+        android:id="@+id/rxjava_button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rxjave--1" />
+    <Button
+        android:id="@+id/rxjava_button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rxjave--2" />
+    <Button
+        android:id="@+id/rxjava_button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rxjave--3" />
+    <Button
+        android:id="@+id/rxjava_button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rxjave--4" />
+    <Button
+        android:id="@+id/rxjava_button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rxjave--5" />
+    <Button
+        android:id="@+id/rxjava_button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rxjave--6" />
+    <Button
+        android:id="@+id/rxjava_button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rxjave--7" />
+    <Button
+        android:id="@+id/rxjava_button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rxjave--8" />
+
 </LinearLayout>

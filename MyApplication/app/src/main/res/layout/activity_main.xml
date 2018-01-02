@@ -9,7 +9,50 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/my_dimen_20"
+            android:text="Material Design"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:onClick="click25"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="@dimen/my_dimen_2"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/my_dimen_20"
+            android:text="应用上的图标"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:onClick="click24"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="@dimen/my_dimen_2"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/my_dimen_20"
+            android:text="spanablestring"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:onClick="click23"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="@dimen/my_dimen_2"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/my_dimen_20"
+            android:text="switch-case-return"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:onClick="click22"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="@dimen/my_dimen_2"
+            />
 
         <TextView
             android:layout_width="match_parent"

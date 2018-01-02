@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class EventBusActivity01 extends AppCompatActivity {
+public class EventBusActivity01 extends BaseActivity {
 //    @BindView(R.id.activity_eventbus_textview1)
 //    TextView textView1;
 //    @BindView(R.id.activity_eventbus_textview2)

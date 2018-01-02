@@ -24,7 +24,7 @@ import butterknife.OnClick;
  *
  * http://blog.csdn.net/qq_17250009/article/details/50906508
  */
-public class ThreadPoolActivity extends Activity {
+public class ThreadPoolActivity extends BaseActivity {
     @BindView(R.id.thread_activity_textview4)
     TextView textView4;
     int num=0;

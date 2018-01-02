@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class EventBusActivity2 extends EventBusActivity01 {
+public class EventBusActivity2 extends BaseActivity {
     @BindView(R.id.activity_eventbus2_textview2)
     TextView textView;
     @Override
