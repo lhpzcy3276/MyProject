@@ -9,6 +9,29 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/my_dimen_20"
+            android:text="自定义控件"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:onClick="click27"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="@dimen/my_dimen_2"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/my_dimen_20"
+            android:text="音视频"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:onClick="click26"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="@dimen/my_dimen_2"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

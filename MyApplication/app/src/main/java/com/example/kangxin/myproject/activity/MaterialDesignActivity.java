@@ -12,6 +12,10 @@ import android.widget.Button;
 import com.example.kangxin.myproject.R;
 import com.example.kangxin.myproject.utils.LogUtil;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnTouch;

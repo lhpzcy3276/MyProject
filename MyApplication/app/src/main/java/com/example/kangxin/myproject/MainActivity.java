@@ -16,6 +16,7 @@ import com.example.kangxin.myproject.activity.BadgeActivity;
 import com.example.kangxin.myproject.activity.ButterKnifeActivity;
 import com.example.kangxin.myproject.activity.ConstraintLayoutActivity;
 import com.example.kangxin.myproject.activity.CropActivity;
+import com.example.kangxin.myproject.activity.CustomViewActivity;
 import com.example.kangxin.myproject.activity.Dialog_Loading_Activity;
 import com.example.kangxin.myproject.activity.EventBusActivity01;
 import com.example.kangxin.myproject.activity.EventBusActivity2;
@@ -29,6 +30,7 @@ import com.example.kangxin.myproject.activity.RxJavaActivity;
 import com.example.kangxin.myproject.activity.Rxjava2Activity;
 import com.example.kangxin.myproject.activity.SpannableStringActivity;
 import com.example.kangxin.myproject.activity.ThreadPoolActivity;
+import com.example.kangxin.myproject.activity.VideoActivity;
 import com.example.kangxin.myproject.utils.PublicStaticMethod;
 
 
@@ -41,6 +43,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         registerRec();
+    }
+    public void click27(View veiw){
+        startActivity(new Intent(this, CustomViewActivity.class));
+
+    }
+    public void click26(View veiw){
+        startActivity(new Intent(this, VideoActivity.class));
+
     }
     public void click25(View veiw){
         startActivity(new Intent(this, MaterialDesignActivity.class));

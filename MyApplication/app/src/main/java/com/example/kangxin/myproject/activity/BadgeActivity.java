@@ -12,11 +12,17 @@ import com.example.kangxin.myproject.service.DaemonService;
 import com.example.kangxin.myproject.utils.BadgeUtil;
 import com.example.kangxin.myproject.utils.LogUtil;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.ArrayList;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class BadgeActivity extends BaseActivity {
     UserInfo userInfo=new UserInfo();
+    ArrayList<String> list=new ArrayList<>();
     int num=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +41,14 @@ public class BadgeActivity extends BaseActivity {
     void mClick(View view){
         switch (view.getId()){
             case R.id.badge_textview:
+
                 num++;
                 BadgeUtil.setBadgeCount(this,num,R.mipmap.ic_launcher);
                 break;
+
+        }
+        while (true){
+            list.add("---");
         }
     }
 

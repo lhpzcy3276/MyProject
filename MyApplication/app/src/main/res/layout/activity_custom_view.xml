@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kangxin.myproject.activity.CustomViewActivity">
+    <com.example.kangxin.myproject.custom_view.RectView
+        android:id="@+id/activity_custom_rectview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
+    <com.example.kangxin.myproject.custom_view.CircleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.example.kangxin.myproject.custom_view.TrigonView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.example.kangxin.myproject.custom_view.SectorView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.example.kangxin.myproject.custom_view.OvalView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.example.kangxin.myproject.custom_view.PathView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>
