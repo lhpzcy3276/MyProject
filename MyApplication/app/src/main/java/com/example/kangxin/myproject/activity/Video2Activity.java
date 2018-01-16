@@ -1,16 +1,16 @@
 package com.example.kangxin.myproject.activity;
 
-import android.annotation.SuppressLint;
-import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.kangxin.myproject.R;
 import com.example.kangxin.myproject.customview.landlayout_video.LandLayoutVideo;
 import com.example.kangxin.myproject.customview.landlayout_video.SampleListener;
-import com.example.kangxin.myproject.utils.LogUtil;
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder;
 import com.shuyu.gsyvideoplayer.listener.GSYVideoProgressListener;
 import com.shuyu.gsyvideoplayer.listener.LockClickListener;
@@ -21,11 +21,18 @@ import com.shuyu.gsyvideoplayer.video.base.GSYVideoPlayer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class VideoActivity extends AppCompatActivity {
-    @BindView(R.id.activity_video_surfaceview)
+public class Video2Activity extends AppCompatActivity {
+    @BindView(R.id.post_detail_nested_scroll)
+    NestedScrollView postDetailNestedScroll;
+
+    //推荐使用StandardGSYVideoPlayer，功能一致
+    //CustomGSYVideoPlayer部分功能处于试验阶段
+    @BindView(R.id.detail_player)
     LandLayoutVideo detailPlayer;
+
+    @BindView(R.id.activity_detail_player)
+    View activityDetailPlayer;
 
     private boolean isPlay;
     private boolean isPause;
@@ -34,12 +41,9 @@ public class VideoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video);
+        setContentView(R.layout.activity_video2);
         ButterKnife.bind(this);
-        initview();
-    }
 
-    private void initview() {
         //断网自动重新链接，url前接上ijkhttphook:
         //String url = "ijkhttphook:https://res.exexm.com/cw_145225549855002";
 
@@ -80,7 +84,7 @@ public class VideoActivity extends AppCompatActivity {
         //增加封面
 //        ImageView imageView = new ImageView(this);
 //        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//        imageView.setImageResource(R.mipmap.ic_launcher);
+//        imageView.setImageResource(R.mipmap.xxx1);
 
         //detailPlayer.setThumbImageView(imageView);
 
@@ -158,20 +162,15 @@ public class VideoActivity extends AppCompatActivity {
                 .build(detailPlayer);
 
         detailPlayer.getFullscreenButton().setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("WrongConstant")
             @Override
             public void onClick(View v) {
                 //直接横屏
                 orientationUtils.resolveByClick();
 
-                detailPlayer.startWindowFullscreen(VideoActivity.this, true, true);
-
-
+                //第一个true是否需要隐藏actionbar，第二个true是否需要隐藏statusbar
+                detailPlayer.startWindowFullscreen(Video2Activity.this, true, true);
             }
         });
-
-        detailPlayer.startPlayLogic();
-
 
     }
 
@@ -212,7 +211,6 @@ public class VideoActivity extends AppCompatActivity {
         //GSYPreViewManager.instance().releaseMediaPlayer();
         if (orientationUtils != null)
             orientationUtils.releaseListener();
-        LogUtil.d("onDestroy----");
     }
 
 
@@ -238,14 +236,5 @@ public class VideoActivity extends AppCompatActivity {
             return  detailPlayer.getFullWindowPlayer();
         }
         return detailPlayer;
-    }
-
-    @OnClick(R.id.activity_video_framelayout)
-    void mclick(View view){
-        switch (view.getId()){
-            case R.id.activity_video_framelayout:
-
-                break;
-        }
     }
 }

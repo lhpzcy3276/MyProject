@@ -22,14 +22,17 @@ import com.example.kangxin.myproject.activity.EventBusActivity01;
 import com.example.kangxin.myproject.activity.EventBusActivity2;
 import com.example.kangxin.myproject.activity.Glide4Activity;
 import com.example.kangxin.myproject.activity.JsonActivity;
+import com.example.kangxin.myproject.activity.LiveVideoActivity;
 import com.example.kangxin.myproject.activity.MaterialDesignActivity;
 import com.example.kangxin.myproject.activity.MoneyInputActivity;
 import com.example.kangxin.myproject.activity.MyShowLightDialog;
+import com.example.kangxin.myproject.activity.ReflectionActivity;
 import com.example.kangxin.myproject.activity.RetrofitActivity;
 import com.example.kangxin.myproject.activity.RxJavaActivity;
 import com.example.kangxin.myproject.activity.Rxjava2Activity;
 import com.example.kangxin.myproject.activity.SpannableStringActivity;
 import com.example.kangxin.myproject.activity.ThreadPoolActivity;
+import com.example.kangxin.myproject.activity.Video2Activity;
 import com.example.kangxin.myproject.activity.VideoActivity;
 import com.example.kangxin.myproject.utils.PublicStaticMethod;
 
@@ -43,6 +46,18 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         registerRec();
+    }
+    public void click30(View veiw){
+        startActivity(new Intent(this, Video2Activity.class));
+
+    }
+    public void click29(View veiw){
+        startActivity(new Intent(this, LiveVideoActivity.class));
+
+    }
+    public void click28(View veiw){
+        startActivity(new Intent(this, ReflectionActivity.class));
+
     }
     public void click27(View veiw){
         startActivity(new Intent(this, CustomViewActivity.class));

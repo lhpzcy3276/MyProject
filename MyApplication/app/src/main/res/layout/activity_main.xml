@@ -9,7 +9,39 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/my_dimen_20"
+            android:text="video2"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:onClick="click30"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="@dimen/my_dimen_2"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/my_dimen_20"
+            android:text="socket"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:onClick="click29"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="@dimen/my_dimen_2"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/my_dimen_20"
+            android:text="反射"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:onClick="click28"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="@dimen/my_dimen_2"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
